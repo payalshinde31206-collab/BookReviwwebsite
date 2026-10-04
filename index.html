@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookVerse | Book Reviews</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Book<span>Verse</span></span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#books">Books</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-search">
+            <input type="text" id="searchInput" placeholder="Search books...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO BOOKVERSE</p>
+
+            <h1>
+                Discover Your
+                <span>Next Great Book</span>
+            </h1>
+
+            <p>
+                Explore honest reviews, discover popular books,
+                and find your next unforgettable reading experience.
+            </p>
+
+            <a href="#books" class="hero-btn">
+                Explore Books
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOK SECTION -->
+
+    <section class="books-section" id="books">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="section-label">EXPLORE</p>
+                <h2>Featured Books</h2>
+            </div>
+
+            <div class="categories">
+                <button class="category active" onclick="filterBooks('all')">All</button>
+                <button class="category" onclick="filterBooks('fiction')">Fiction</button>
+                <button class="category" onclick="filterBooks('self-help')">Self Help</button>
+                <button class="category" onclick="filterBooks('finance')">Finance</button>
+            </div>
+
+        </div>
+
+
+        <div class="book-grid" id="bookGrid">
+
+
+            <!-- BOOK 1 -->
+
+            <<div class="book-card" data-category="fiction">
+
+                <div class="book-image">
+
+                    <img src="images/book1.jpg" alt="The Alchemist book">
+
+
+                    <span class="badge">Popular</span>
+                </div>
+
+                <!-- BOOK 2 -->
+                <div class="book-info">
+
+                    <p class="book-category">FICTION</p>
+
+                    <h3>The Alchemist</h3>
+
+                    <p class="author">Paulo Coelho</p>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>4.8</span>
+                    </div>
+
+
+
+                    <p class="description">
+                        A fascinating story about dreams, destiny,
+                        and following your heart.
+                    </p>
+
+                    <button class="review-btn" onclick="showReview('The Alchemist')">
+                        Read Review
+                    </button>
+
+                </div>
+
+        </div>
+
+
+        <!-- BOOK 2 -->
+
+        <div class="book-card" data-category="self-help">
+
+            <div class="book-image">
+
+                <img src="images/book2.jpg" alt="Atomic Habits book">
+
+                <span class="badge">Trending</span>
+
+            </div>
+
+            <div class="book-info">
+
+                <p class="book-category">SELF HELP</p>
+
+                <h3>Atomic Habits</h3>
+
+                <p class="author">James Clear</p>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>4.9</span>
+                </div>
+
+                <p class="description">
+                    Learn how small changes can create powerful
+                    and lasting habits.
+                </p>
+
+                <button class="review-btn" onclick="showReview('Atomic Habits')">
+                    Read Review
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK 3 -->
+
+        <div class="book-card" data-category="finance">
+
+            <div class="book-image">
+
+                <img src="images/book3.jpg" alt="The Psychology of Money">
+
+            </div>
+
+            <div class="book-info">
+
+                <p class="book-category">FINANCE</p>
+
+                <h3>The Psychology of Money</h3>
+
+                <p class="author">Morgan Housel</p>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>4.7</span>
+                </div>
+
+                <p class="description">
+                    A thoughtful book about money, behavior,
+                    wealth, and financial decisions.
+                </p>
+
+                <button class="review-btn" onclick="showReview('The Psychology of Money')">
+                    Read Review
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK 4 -->
+
+        <div class="book-card" data-category="fiction">
+
+            <div class="book-image">
+
+                <img src="images/book4.jpg" alt="Harry Potter book">
+
+                <span class="badge">Classic</span>
+
+            </div>
+
+            <div class="book-info">
+
+                <p class="book-category">FICTION</p>
+
+                <h3>Harry Potter</h3>
+
+                <p class="author">J. K. Rowling</p>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>4.9</span>
+                </div>
+
+                <p class="description">
+                    A magical journey filled with friendship,
+                    courage, mystery, and adventure.
+                </p>
+
+                <button class="review-btn" onclick="showReview('Harry Potter')">
+                    Read Review
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK 5 -->
+
+        <div class="book-card" data-category="self-help">
+
+            <div class="book-image">
+
+                <img src="images/book5.jpg" alt="Ikigai book">
+
+            </div>
+
+            <div class="book-info">
+
+                <p class="book-category">SELF HELP</p>
+
+                <h3>Ikigai</h3>
+
+                <p class="author">Héctor García</p>
+
+                <div class="rating">
+                    ★★★★☆
+                    <span>4.5</span>
+                </div>
+
+                <p class="description">
+                    Explore the Japanese concept of purpose,
+                    happiness, and meaningful living.
+                </p>
+
+                <button class="review-btn" onclick="showReview('Ikigai')">
+                    Read Review
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK 6 -->
+
+        <div class="book-card" data-category="finance">
+
+            <div class="book-image">
+
+                <img src="images/book6.jpg" alt="Rich Dad Poor Dad">
+
+            </div>
+
+            <div class="book-info">
+
+                <p class="book-category">FINANCE</p>
+
+                <h3>Rich Dad Poor Dad</h3>
+
+                <p class="author">Robert Kiyosaki</p>
+
+                <div class="rating">
+                    ★★★★☆
+                    <span>4.4</span>
+                </div>
+
+                <p class="description">
+                    A popular introduction to financial thinking,
+                    assets, income, and money management.
+                </p>
+
+                <button class="review-btn" onclick="showReview('Rich Dad Poor Dad')">
+                    Read Review
+                </button>
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <i class="fa-solid fa-book"></i>
+            <h2>500+</h2>
+            <p>Books Reviewed</p>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-star"></i>
+            <h2>4.8</h2>
+            <p>Average Rating</p>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-users"></i>
+            <h2>10K+</h2>
+            <p>Readers</p>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-pen"></i>
+            <h2>1K+</h2>
+            <p>Reviews</p>
+        </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section class="reviews-section" id="reviews">
+
+        <div class="section-heading center">
+
+            <p class="section-label">COMMUNITY</p>
+
+            <h2>What Readers Say</h2>
+
+            <p>
+                See what other readers think about their favorite books.
+            </p>
+
+        </div>
+
+
+        <div class="review-grid">
+
+            <div class="review-card">
+
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <p>
+                    "Atomic Habits completely changed the way I
+                    think about building daily habits."
+                </p>
+
+                <div class="review-user">
+                    <div class="avatar">A</div>
+
+                    <div>
+                        <h4>Ananya</h4>
+                        <span>Book Lover</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <p>
+                    "The Alchemist is a beautiful reminder to follow
+                    your dreams and believe in your journey."
+                </p>
+
+                <div class="review-user">
+
+                    <div class="avatar">R</div>
+
+                    <div>
+                        <h4>Rahul</h4>
+                        <span>Reader</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <p>
+                    "The Psychology of Money gave me a completely
+                    different perspective on financial decisions."
+                </p>
+
+                <div class="review-user">
+
+                    <div class="avatar">S</div>
+
+                    <div>
+                        <h4>Sneha</h4>
+                        <span>Book Enthusiast</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <p class="section-label">ABOUT BOOKVERSE</p>
+
+            <h2>Every Book Has a Story.<br>
+                Find Yours.</h2>
+
+            <p>
+                BookVerse is a simple book review platform created
+                for readers who want to discover interesting books,
+                read honest reviews, and share their reading journey.
+            </p>
+
+            <a href="#books" class="about-btn">
+                Explore Our Books
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            <i class="fa-solid fa-book-open"></i>
+            BookVerse
+        </div>
+
+        <p>
+            Discover. Read. Review.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 BookVerse. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- REVIEW POPUP -->
+
+    <div class="modal" id="reviewModal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" onclick="closeReview()">
+                ×
+            </button>
+
+            <i class="fa-solid fa-book-open modal-icon"></i>
+
+            <h2 id="modalTitle">Book Review</h2>
+
+            <div class="modal-rating">
+                ★★★★★
+            </div>
+
+            <p id="modalText"></p>
+
+            <button class="modal-btn" onclick="closeReview()">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* SEARCH */
+
+        const searchInput = document.getElementById("searchInput");
+
+        searchInput.addEventListener("keyup", function () {
+
+            const searchValue =
+                searchInput.value.toLowerCase();
+
+            const books =
+                document.querySelectorAll(".book-card");
+
+            books.forEach(function (book) {
+
+                const title =
+                    book.querySelector("h3").textContent.toLowerCase();
+
+                const author =
+                    book.querySelector(".author").textContent.toLowerCase();
+
+                if (
+                    title.includes(searchValue) ||
+                    author.includes(searchValue)
+                ) {
+
+                    book.style.display = "block";
+
+                } else {
+
+                    book.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+
+        /* CATEGORY FILTER */
+
+        function filterBooks(category) {
+
+            const books =
+                document.querySelectorAll(".book-card");
+
+            const buttons =
+                document.querySelectorAll(".category");
+
+            buttons.forEach(function (button) {
+
+                button.classList.remove("active");
+
+            });
+
+            event.target.classList.add("active");
+
+
+            books.forEach(function (book) {
+
+                if (
+                    category === "all" ||
+                    book.dataset.category === category
+                ) {
+
+                    book.style.display = "block";
+
+                } else {
+
+                    book.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        /* REVIEW POPUP */
+
+        function showReview(bookName) {
+
+            const modal =
+                document.getElementById("reviewModal");
+
+            const title =
+                document.getElementById("modalTitle");
+
+            const text =
+                document.getElementById("modalText");
+
+
+            title.textContent = bookName;
+
+
+            const reviews = {
+
+                "The Alchemist":
+                    "The Alchemist is an inspiring story about following your dreams, discovering your purpose, and listening to your heart.",
+
+                "Atomic Habits":
+                    "Atomic Habits explains how small, consistent improvements can create remarkable changes over time. It is practical and easy to understand.",
+
+                "The Psychology of Money":
+                    "This book explores how emotions and behavior influence financial decisions. It provides useful lessons about saving, investing, and wealth.",
+
+                "Harry Potter":
+                    "Harry Potter takes readers into a magical world filled with friendship, adventure, challenges, and courage.",
+
+                "Ikigai":
+                    "Ikigai introduces the idea of finding meaning and purpose in everyday life while maintaining balance and happiness.",
+
+                "Rich Dad Poor Dad":
+                    "This book introduces different ways of thinking about money, assets, income, and financial independence."
+
+            };
+
+
+            text.textContent = reviews[bookName];
+
+            modal.classList.add("show");
+
+        }
+
+
+        function closeReview() {
+
+            document
+                .getElementById("reviewModal")
+                .classList.remove("show");
+
+        }
+
+
+        /* CLOSE MODAL WHEN CLICKING OUTSIDE */
+
+        window.onclick = function (event) {
+
+            const modal =
+                document.getElementById("reviewModal");
+
+            if (event.target === modal) {
+
+                closeReview();
+
+            }
+
+        };
+
+    </script>
+
+</body>
+
+</html>

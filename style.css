@@ -1,0 +1,627 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #faf8f4;
+    color: #252525;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 27px;
+}
+
+.logo span span {
+    font-style: italic;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    transform: translateY(-2px);
+}
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    background: #f4f1eb;
+    padding: 9px 14px;
+    border-radius: 25px;
+}
+
+.nav-search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 130px;
+    font-family: "Poppins";
+}
+
+.nav-search i {
+    font-size: 14px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 80px 7%;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 18, 16, 0.88),
+            rgba(20, 18, 16, 0.55),
+            rgba(20, 18, 16, 0.15)
+        ),
+        url("images/hero-book.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: white;
+}
+
+.small-title {
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 64px;
+    line-height: 1.08;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero-content > p:not(.small-title) {
+    max-width: 550px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #e7e7e7;
+}
+
+.hero-btn,
+.about-btn {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 30px;
+    padding: 14px 25px;
+    background: white;
+    color: #222;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover,
+.about-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* BOOK SECTION */
+
+.books-section {
+    padding: 90px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-heading h2,
+.about h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.category {
+    border: none;
+    padding: 9px 17px;
+    border-radius: 20px;
+    background: #eeeae3;
+    cursor: pointer;
+    font-family: "Poppins";
+    transition: 0.3s;
+}
+
+.category.active,
+.category:hover {
+    background: #252525;
+    color: white;
+}
+
+
+/* BOOK GRID */
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.book-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    transition: 0.35s;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.book-image {
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    background: #eee;
+}
+
+.book-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.book-card:hover .book-image img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    background: white;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.book-info {
+    padding: 25px;
+}
+
+.book-category {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.book-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.author {
+    font-size: 13px;
+    color: #777;
+}
+
+.rating {
+    margin: 13px 0;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+.rating span {
+    color: #777;
+    font-size: 12px;
+    margin-left: 5px;
+    letter-spacing: 0;
+}
+
+.description {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 65px;
+}
+
+.review-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: 1px solid #222;
+    background: white;
+    color: #222;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Poppins";
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.review-btn:hover {
+    background: #222;
+    color: white;
+}
+
+
+/* STATS */
+
+.stats {
+    padding: 55px 7%;
+    background: #242321;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+}
+
+.stat i {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.stat h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+}
+
+.stat p {
+    font-size: 12px;
+    color: #aaa;
+}
+
+
+/* REVIEWS */
+
+.reviews-section {
+    padding: 90px 7%;
+}
+
+.center {
+    display: block;
+    text-align: center;
+}
+
+.center > p:last-child {
+    color: #777;
+    margin-top: 10px;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.06);
+}
+
+.quote {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.review-card > p {
+    line-height: 1.8;
+    font-size: 14px;
+    color: #555;
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #242321;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-user h4 {
+    font-size: 13px;
+}
+
+.review-user span {
+    font-size: 11px;
+    color: #888;
+}
+
+
+/* ABOUT */
+
+.about {
+    padding: 100px 7%;
+    background: #242321;
+    color: white;
+}
+
+.about-content {
+    max-width: 700px;
+}
+
+.about h2 {
+    margin-bottom: 25px;
+}
+
+.about-content > p:not(.section-label) {
+    color: #ccc;
+    line-height: 1.9;
+}
+
+.about-btn {
+    background: white;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #171715;
+    color: white;
+    text-align: center;
+    padding: 45px 7%;
+}
+
+.footer-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.footer-logo i {
+    margin-right: 8px;
+}
+
+footer > p {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.social-icons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.copyright {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    width: 500px;
+    max-width: 100%;
+    padding: 45px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+}
+
+.modal-rating {
+    margin: 15px;
+    letter-spacing: 3px;
+}
+
+.modal-content p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.modal-btn {
+    margin-top: 25px;
+    padding: 11px 25px;
+    border: none;
+    background: #242321;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .review-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .nav-search {
+        display: none;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 60px 7%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .books-section,
+    .reviews-section {
+        padding: 65px 5%;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .categories {
+        margin-top: 25px;
+    }
+
+    .book-grid,
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .section-heading h2,
+    .about h2 {
+        font-size: 34px;
+    }
+
+}
